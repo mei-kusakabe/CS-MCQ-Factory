@@ -1,0 +1,10 @@
+ul li a {
+    text-decoration: none;
+    margin-right: 12px;
+    padding: 3px 6px;
+
+}
+
+ul li a:hover {
+    color: rgb(229, 48, 12);
+}
