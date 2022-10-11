@@ -19,7 +19,7 @@ function App() {
       ]
     },
     { path: '/home', element: <Home></Home> },
-
+    { path: '*', element: <div><h2 className='mt-5'>This route not found</h2></div> }
   ])
   return (
 
