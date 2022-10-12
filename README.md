@@ -71,3 +71,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### `Project Name : CS MCQ Factory`
 
+### `Live Website Link: ` This section has moved here: []()
+
+Assalamu 'alaikum,
+
+This project is a simple React web application for a quiz. There are four different types of quiz topic categories. These tests can be taken by anyone interested in technology, regardless of whether they have a CSE background or not. Additionally, students can learn about some typically asked questions, which are the most crucial inquiries made throughout interviews.
+
