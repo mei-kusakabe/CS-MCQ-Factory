@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../Home/Home.css';
 import './Topic.css';
 
@@ -8,13 +9,11 @@ const Topic = ({ topic }) => {
     return (
 
         <div className='topic-section'>
-            <div className='topic'>
-                <ul>
-                    <li> <img src={logo} ></img></li>
-                    <li>quiz topic: {name}</li>
-                    <li> Total Question: {total} </li>
-                    <li><button>Test yourself</button></li>
-                </ul>
+            <div className='topic px-0 border-1'>
+                <img className="mt-5" src={logo} ></img>
+                <h4>Topic: {name} </h4>
+                <h4> Total Question: {total}</h4>
+                <button> <Link to={`/quiz/${id}`}>Test yourself</Link></button>
 
             </div>
 
