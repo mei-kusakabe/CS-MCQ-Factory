@@ -8,17 +8,6 @@
     background-repeat: no-repeat;
     opacity: 0.7;
     filter: alpha(opacity=80);
-
-}
-
-.topic img {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-
-.topic-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 45px;
+    width: 100%;
 
 }

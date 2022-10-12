@@ -67,18 +67,16 @@ const Quizes = () => {
                             question={question}>
 
                             <div className='single-question  mx-4 py-3 rounded'>
-                                <div className='d-flex justify-content-center mb-3'>
+                                <div className='px-3 mx-3 quest justify-content-center mb-3'>
                                     <h4 className='question-text fw-bold text-white'><span className='fw-bold'>Question:{i + 1}. </span>  {question.question.slice(3, -4)} </h4>
-                                    <span className='px-5 fw-bold text-white'> See Ans: <FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={isActive ? faEyeSlash : faEye}></FontAwesomeIcon></span>
-
+                                    <div className='px-5 fw-bold text-white'> See Ans: <FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={isActive ? faEyeSlash : faEye}></FontAwesomeIcon></div>
                                 </div>
-
                                 <div className='answer-section'>
                                     <div className="options">
                                         {
                                             question.options.map((option, i) => <div
                                                 key={i}
-                                                question={question}> <div className='bg-light fw-bold mx-5 m-2 rounded px-3 py-2'>
+                                                question={question}> <div className='option bg-light fw-bold mx-5 m-2 rounded px-3 py-2'>
                                                     <span className='fw-bold'> Option  {i + 1}{" : "}</span>
                                                     <input type="radio" value={option}
                                                         onClick={(e, ans) => checkAnswer(e.target.value, question.correctAnswer)} name="1" /> {option}<br></br>

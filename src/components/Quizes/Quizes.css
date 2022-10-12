@@ -6,6 +6,11 @@
 
 }
 
+.quest {
+    display: grid;
+    grid-template-columns: repeat(2, 4fr);
+}
+
 .quiz-container {
     background-color: white;
     border-radius: 10px;
@@ -25,4 +30,38 @@
 .single-question {
     background-color: #14447f;
 
+}
+
+
+/* for-small-devices*/
+@media screen and (max-width:768px) {
+
+    .quest {
+        display: grid;
+        grid-template-columns: repeat(1, 4fr);
+    }
+
+
+    .options {
+        display: grid;
+        grid-template-columns: repeat(1, 4fr);
+    }
+
+    .option {
+        display: grid;
+        grid-template-columns: repeat(1, 4fr);
+
+    }
+}
+
+/* for-tablet-devices */
+
+@media (min-width: 769px) and (max-width : 1200px) {
+    .options {
+        display: grid;
+        grid-template-columns: repeat(2, 4fr);
+        margin-left: 0;
+        padding: 0;
+
+    }
 }
