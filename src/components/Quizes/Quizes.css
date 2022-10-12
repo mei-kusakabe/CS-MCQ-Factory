@@ -7,16 +7,22 @@
 }
 
 .quiz-container {
-    background-color: #b0eaf5;
+    background-color: white;
     border-radius: 10px;
     font-family: Avenir;
     padding: 20px;
 }
 
 .ques-container {
-    background-color: #e5f5f8;
+    background-color: #6caefe;
+    /* background-color: #6caefe; */
     border-radius: 10px;
     font-family: Avenir;
     padding: 20px;
     gap: 15px;
+}
+
+.single-question {
+    background-color: #14447f;
+
 }

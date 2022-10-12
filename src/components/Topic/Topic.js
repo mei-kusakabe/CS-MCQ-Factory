@@ -13,11 +13,13 @@ const Topic = ({ topic }) => {
                 <img className="mt-5" src={logo} ></img>
                 <h4>Topic: {name} </h4>
                 <h4> Total Question: {total}</h4>
-                <button> <Link to={`/quiz/${id}`}>Test yourself</Link></button>
+                <button type="button" className="btn btn-info px-5 py-2 fw-bold text-white"><Link to={`/quiz/${id}`}>Test yourself</Link></button>
+
+                {/* <button class="button"> <Link to={`/quiz/${id}`}>Test yourself</Link></button> */}
 
             </div>
 
-        </div>
+        </div >
     );
 
 };

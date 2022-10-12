@@ -42,7 +42,7 @@ const Quizes = () => {
 
     function rightAnswer(correctAnswer, i) {
 
-        toast.success("Correct Answer- " + correctAnswer, {
+        toast.success(correctAnswer, {
             position: toast.POSITION.TOP_CENTER,
             autoClose: 1000
         });
@@ -62,32 +62,36 @@ const Quizes = () => {
                 <div className='mt-3 ques-container d-flex flex-column border'>
                     {
                         quizes.questions.map((question, i) => <div
+
                             key={question.id}
                             question={question}>
-                            <h4 className='question-text'><span className='fw-bold'>Question:{i + 1}. </span>  {question.question.slice(3, -4)} <span className='px-4'><FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={isActive ? faEyeSlash : faEye}></FontAwesomeIcon>
-                            </span></h4>
 
-                            {/* <FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={isActive ? faEyeSlash : faEye}></FontAwesomeIcon> */}
-                            {/* <FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={faEyeSlash}></FontAwesomeIcon> */}
-                            <div className='answer-section'>
-
-
-                                <div className="options">
-                                    {
-                                        question.options.map((option, i) => <div
-                                            key={i}
-                                            question={question}> <span className='fw-bold'> Option  {i + 1}{" : "}</span>
-                                            <input type="radio" value={option}
-                                                onClick={(e, ans) => checkAnswer(e.target.value, question.correctAnswer)} name="1" /> {option}<br></br>
-                                            <ToastContainer />
-
-                                        </div>)
-                                    }
+                            <div className='single-question  mx-4 py-3 rounded'>
+                                <div className='d-flex justify-content-center mb-3'>
+                                    <h4 className='question-text fw-bold text-white'><span className='fw-bold'>Question:{i + 1}. </span>  {question.question.slice(3, -4)} </h4>
+                                    <span className='px-5 fw-bold text-white'> See Ans: <FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={isActive ? faEyeSlash : faEye}></FontAwesomeIcon></span>
 
                                 </div>
-                                {/* <div><button onClick={() => handleClick(checkAnswer)} type="submit">Submit</button></div>
-                                <ToastContainer /> */}
+
+                                <div className='answer-section'>
+                                    <div className="options">
+                                        {
+                                            question.options.map((option, i) => <div
+                                                key={i}
+                                                question={question}> <div className='bg-light fw-bold mx-5 m-2 rounded px-3 py-2'>
+                                                    <span className='fw-bold'> Option  {i + 1}{" : "}</span>
+                                                    <input type="radio" value={option}
+                                                        onClick={(e, ans) => checkAnswer(e.target.value, question.correctAnswer)} name="1" /> {option}<br></br>
+                                                    <ToastContainer />
+                                                </div>
+
+                                            </div>)
+                                        }
+                                    </div>
+                                </div>
                             </div>
+
+
 
                         </div>)
                     }
