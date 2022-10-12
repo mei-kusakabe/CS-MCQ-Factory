@@ -42,47 +42,15 @@ const Quizes = () => {
 
     function rightAnswer(correctAnswer, i) {
 
-        toast.success(correctAnswer, {
+        toast.success("Correct Answer- " + correctAnswer, {
             position: toast.POSITION.TOP_CENTER,
             autoClose: 1000
         });
         toggleClass();
-        // icon = { faEye };
         console.log(correctAnswer);
-        // i = 1;
-        // // setSelectedIndex(i);
-        // setSelectedIndex(0);
 
-        // if (e === correctAnswer) {
-        //     //return true;
-        //     // console.log('you have clicked correct answer');
-        //     toast.success('Correct answer !', {
-        //         position: toast.POSITION.TOP_CENTER,
-        //         autoClose: 1000
-        //     });
-        // }
-        // else {
-        //     // return false;
-        //     toast.error('Wrong Answer !', {
-        //         position: toast.POSITION.TOP_CENTER,
-        //         autoClose: 1000
-        //     });
-        // }
     }
 
-
-    // function handleClick(checkAnswer) {
-    //     if (checkAnswer === true) {
-    //         toast.success('You have clicked correct answer !', {
-    //             position: toast.POSITION.TOP_RIGHT
-    //         });
-    //     }
-    //     else {
-    //         toast.error('Error Notification !', {
-    //             position: toast.POSITION.TOP_CENTER
-    //         });
-    //     }
-    // }
     return (
 
         <div className='quiz-container m-5'>
@@ -96,11 +64,13 @@ const Quizes = () => {
                         quizes.questions.map((question, i) => <div
                             key={question.id}
                             question={question}>
-                            <h4 className='question-text'><span className='fw-bold'>Question:{i + 1}. </span>  {question.question.slice(3, -4)}</h4>
-                            <FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={isActive ? faEyeSlash : faEye}></FontAwesomeIcon>
+                            <h4 className='question-text'><span className='fw-bold'>Question:{i + 1}. </span>  {question.question.slice(3, -4)} <span className='px-4'><FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={isActive ? faEyeSlash : faEye}></FontAwesomeIcon>
+                            </span></h4>
+
+                            {/* <FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={isActive ? faEyeSlash : faEye}></FontAwesomeIcon> */}
                             {/* <FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={faEyeSlash}></FontAwesomeIcon> */}
                             <div className='answer-section'>
-                                {/* <FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={isActive ? faEyeSlash : faEye}></FontAwesomeIcon> */}
+
 
                                 <div className="options">
                                     {

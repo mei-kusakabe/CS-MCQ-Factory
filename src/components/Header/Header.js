@@ -5,9 +5,10 @@ import './Header.css'
 const Header = () => {
     return (
         <div className='header'>
-            <nav className="navbar navbar-expand-lg bg-light">
-                <div className="container">
-                    <a className="navbar-brand" href="#">CS MCQ Factory</a>
+            <nav className="navbar navbar-expand-lg bg-light shadow">
+                <div className="container bg-light">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2641/2641457.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
+                    <a className="navbar-brand text-info fw-bold px-3" href="/home">CS MCQ Factory</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
