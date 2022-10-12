@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### `Project Name : CS MCQ Factory`
 
-### `Live Website Link: ` This section has moved here: []()
+### `Live Website Link: ` This section has moved here: [https://curious-dango-cbc0e4.netlify.app/home](https://curious-dango-cbc0e4.netlify.app/home)
 ### `Project Description: `
 
 Assalamu 'alaikum,
