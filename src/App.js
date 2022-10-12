@@ -61,7 +61,7 @@ function App() {
       ]
     },
 
-    { path: '*', element: <div><h2 className='mt-5'>This route not found</h2></div> }
+    { path: '*', element: <div><h2 className='mt-5'>404 Route Not Found</h2></div> }
   ])
   return (
 

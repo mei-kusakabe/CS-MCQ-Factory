@@ -7,15 +7,12 @@ const Statistics = () => {
     const quizTopics = useLoaderData().data;
     console.log(quizTopics);
     return (
-        <div className='bar'>
+
+
+        <div className='bar2 m-5 position-absolute top-50 start-50 translate-middle'>
             <h2 className='fw-bold mt-5'>Statistics page of Topics</h2>
 
-            <div className='m-5 position-absolute top-50 start-50 translate-middle'>
-
-
-                {/* <ResponsiveContainer width={600} height={400}> */}
-                {/* <ResponsiveContainer width="100%" height={400}> */}
-
+            <ResponsiveContainer width="100%" height={400}>
                 <BarChart
                     width={500}
                     height={300}
@@ -31,10 +28,9 @@ const Statistics = () => {
                     <Bar dataKey="total" stackId="a" fill="#82ca9d" label={quizTopics} />
                     <Tooltip></Tooltip>
                 </BarChart>
-                {/* </ResponsiveContainer> */}
-            </div>
+            </ResponsiveContainer>
+        </div>
 
-        </div >
     );
 };
 
