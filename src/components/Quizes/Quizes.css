@@ -34,22 +34,34 @@
 
 
 /* for-small-devices*/
-@media screen and (max-width:768px) {
+@media (min-width: 320px) and (max-width : 768px) {
 
     .quest {
         display: grid;
         grid-template-columns: repeat(1, 4fr);
+        font-size: 18px;
+
     }
 
 
     .options {
         display: grid;
         grid-template-columns: repeat(1, 4fr);
+        justify-content: center;
+        margin-left: 50%;
+        margin-right: 50%;
+        font-size: 12px;
+
     }
 
     .option {
         display: grid;
         grid-template-columns: repeat(1, 4fr);
+        justify-content: center;
+        margin-left: 50%;
+        margin-right: 50%;
+        font-size: 12px;
+
 
     }
 }
