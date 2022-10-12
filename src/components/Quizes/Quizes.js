@@ -11,8 +11,14 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 const Quizes = () => {
     const quizes = useLoaderData().data;
     console.log(quizes);
+    const [isActive, setActive] = useState(true);
 
-    const [selectedIndex, setSelectedIndex] = useState(0)
+
+    // const [selectedIndex, setSelectedIndex] = useState(0)
+
+    const toggleClass = () => {
+        setActive(!isActive);
+    };
 
 
     function checkAnswer(e, correctAnswer) {
@@ -40,11 +46,12 @@ const Quizes = () => {
             position: toast.POSITION.TOP_CENTER,
             autoClose: 1000
         });
+        toggleClass();
         // icon = { faEye };
         console.log(correctAnswer);
-        i = 1;
-        // setSelectedIndex(i);
-        setSelectedIndex(prevCheck => !prevCheck);
+        // i = 1;
+        // // setSelectedIndex(i);
+        // setSelectedIndex(0);
 
         // if (e === correctAnswer) {
         //     //return true;
@@ -90,10 +97,10 @@ const Quizes = () => {
                             key={question.id}
                             question={question}>
                             <h4 className='question-text'><span className='fw-bold'>Question:{i + 1}. </span>  {question.question.slice(3, -4)}</h4>
-                            {/* <FontAwesomeIcon onClick={(ans, i) => rightAnswer(question.correctAnswer, i)} icon={selectedIndex == i ? faEyeSlash : faEye}></FontAwesomeIcon> */}
+                            <FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={isActive ? faEyeSlash : faEye}></FontAwesomeIcon>
                             {/* <FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={faEyeSlash}></FontAwesomeIcon> */}
                             <div className='answer-section'>
-                                <FontAwesomeIcon onClick={(ans, i) => rightAnswer(question.correctAnswer, i)} icon={i === 0 ? faEyeSlash : faEye}></FontAwesomeIcon>
+                                {/* <FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={isActive ? faEyeSlash : faEye}></FontAwesomeIcon> */}
 
                                 <div className="options">
                                     {
