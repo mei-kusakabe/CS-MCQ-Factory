@@ -1,9 +1,9 @@
 .options {
-    /* display: grid;
-    grid-template-columns: 3fr 7fr;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 4fr);
     margin-left: 0;
-    padding: 0; */
+    padding: 0;
+
 }
 
 .quiz-container {

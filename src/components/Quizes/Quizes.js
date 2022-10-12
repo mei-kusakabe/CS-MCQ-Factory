@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Quiz from '../Quiz/Quiz';
 import './Quizes.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 
 const Quizes = () => {
     const quizes = useLoaderData().data;
     console.log(quizes);
 
+    const [selectedIndex, setSelectedIndex] = useState(0)
+
+
     function checkAnswer(e, correctAnswer) {
         console.log(e, " ", correctAnswer);
         if (e === correctAnswer) {
-
             //return true;
             // console.log('you have clicked correct answer');
             toast.success('Correct answer !', {
@@ -29,6 +33,36 @@ const Quizes = () => {
             });
         }
     }
+
+    function rightAnswer(correctAnswer, i) {
+
+        toast.success(correctAnswer, {
+            position: toast.POSITION.TOP_CENTER,
+            autoClose: 1000
+        });
+        // icon = { faEye };
+        console.log(correctAnswer);
+        i = 1;
+        // setSelectedIndex(i);
+        setSelectedIndex(prevCheck => !prevCheck);
+
+        // if (e === correctAnswer) {
+        //     //return true;
+        //     // console.log('you have clicked correct answer');
+        //     toast.success('Correct answer !', {
+        //         position: toast.POSITION.TOP_CENTER,
+        //         autoClose: 1000
+        //     });
+        // }
+        // else {
+        //     // return false;
+        //     toast.error('Wrong Answer !', {
+        //         position: toast.POSITION.TOP_CENTER,
+        //         autoClose: 1000
+        //     });
+        // }
+    }
+
 
     // function handleClick(checkAnswer) {
     //     if (checkAnswer === true) {
@@ -56,20 +90,23 @@ const Quizes = () => {
                             key={question.id}
                             question={question}>
                             <h4 className='question-text'><span className='fw-bold'>Question:{i + 1}. </span>  {question.question.slice(3, -4)}</h4>
+                            {/* <FontAwesomeIcon onClick={(ans, i) => rightAnswer(question.correctAnswer, i)} icon={selectedIndex == i ? faEyeSlash : faEye}></FontAwesomeIcon> */}
+                            {/* <FontAwesomeIcon onClick={(ans) => rightAnswer(question.correctAnswer)} icon={faEyeSlash}></FontAwesomeIcon> */}
                             <div className='answer-section'>
-                                <div className="options">
-                                    <ul>
-                                        {
-                                            question.options.map((option, i) => <div
-                                                key={i}
-                                                question={question}>
-                                                <input type="radio" value={option}
-                                                    onClick={(e, ans) => checkAnswer(e.target.value, question.correctAnswer)} name="1" /> {option}<br></br>
-                                                <ToastContainer />
+                                <FontAwesomeIcon onClick={(ans, i) => rightAnswer(question.correctAnswer, i)} icon={i === 0 ? faEyeSlash : faEye}></FontAwesomeIcon>
 
-                                            </div>)
-                                        }
-                                    </ul>
+                                <div className="options">
+                                    {
+                                        question.options.map((option, i) => <div
+                                            key={i}
+                                            question={question}> <span className='fw-bold'> Option  {i + 1}{" : "}</span>
+                                            <input type="radio" value={option}
+                                                onClick={(e, ans) => checkAnswer(e.target.value, question.correctAnswer)} name="1" /> {option}<br></br>
+                                            <ToastContainer />
+
+                                        </div>)
+                                    }
+
                                 </div>
                                 {/* <div><button onClick={() => handleClick(checkAnswer)} type="submit">Submit</button></div>
                                 <ToastContainer /> */}
@@ -78,9 +115,9 @@ const Quizes = () => {
                         </div>)
                     }
                 </div>
-            </form>
+            </form >
 
-        </div>
+        </div >
     );
 };
 
